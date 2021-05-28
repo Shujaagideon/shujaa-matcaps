@@ -14,7 +14,7 @@ import lightfrag from './shaders/lightfrag'
 
 import cubes from './images/3D-objects/creativeStudio.obj'
 import butterfly from './images/3D-objects/al.obj'
-import shark from './images/3D-objects/bigmax_white_obj.obj'
+import shark from './images/3D-objects/Bigmax_White_OBJ.obj'
 import lego from './images/3D-objects/lego.obj'
 import icosas from './images/3D-objects/icosas.obj'
 
