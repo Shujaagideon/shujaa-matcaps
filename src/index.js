@@ -381,7 +381,7 @@ export default class Sketch {
         });
         window.addEventListener('mousemove', e => {
             this.mouse.x = (e.clientX / window.innerWidth/2);
-            this.mouse.y = (e.clientY / -window.innerHeight/2);
+            this.mouse.y = -(e.clientY / -window.innerHeight/2);
 
             this.raycaster.setFromCamera(this.mouse, this.camera);
             let intersects = this.raycaster.intersectObjects([this.rayPlane]);
