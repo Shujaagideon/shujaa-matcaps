@@ -221,6 +221,7 @@ export default class Sketch {
                 obj.position.y += 0.2;
                 this.threeD2.add(obj);
             })
+	    this.threeD2.position.z = -1.5;
             this.threeObjcts.push(this.threeD2);
             this.scene.add(this.threeD2)
 
@@ -493,12 +494,12 @@ export default class Sketch {
                 gsap.to(nextTexture.position, {
                     z: 0,
                     ease: Expo.easeInOut,
-                    // onComplete: () => {
-                    //     console.log('FINISH');
-                    //     nextTexture.position.z = 3.5;
-                    //     this.current = (this.current + 1) % len;
-                    //     this.isRunning = false;
-                    // }
+                    onComplete: () => {
+                        console.log('FINISH');
+                        nextTexture.position.z = 3.5;
+                        this.current = (this.current + 1) % len;
+                        this.isRunning = false;
+                    }
                 })
             }
         })
