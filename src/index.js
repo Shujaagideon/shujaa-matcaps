@@ -493,12 +493,12 @@ export default class Sketch {
                 gsap.to(nextTexture.position, {
                     z: 0,
                     ease: Expo.easeInOut,
-                    onComplete: () => {
-//                         console.log('FINISH');
-//                         nextTexture.position.z = 3.5;
-//                         this.current = (this.current + 1) % len;
-//                         this.isRunning = false;
-                    }
+                    // onComplete: () => {
+                    //     console.log('FINISH');
+                    //     nextTexture.position.z = 3.5;
+                    //     this.current = (this.current + 1) % len;
+                    //     this.isRunning = false;
+                    // }
                 })
             }
         })
