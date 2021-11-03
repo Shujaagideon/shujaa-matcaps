@@ -488,8 +488,8 @@ export default class Sketch {
                 console.log('FINISH');
                 nextTexture.position.z = 3.5;
                 this.current = (this.current + 1) % len;
-                this.isRunning = false;
                 nextTexture = this.threeObjcts[(this.current + 1) % len]
+                this.isRunning = false;
                 gsap.to(nextTexture.position, {
                     z: 0,
                     ease: Expo.easeInOut,
