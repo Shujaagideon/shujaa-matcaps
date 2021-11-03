@@ -107,7 +107,7 @@ export default class Sketch {
         this.threeD3 = new THREE.Object3D()
         this.threeD4 = new THREE.Object3D()
         this.threeD5 = new THREE.Object3D()
-        this.threeD8 = new THREE.Object3D()
+        this.threeD6 = new THREE.Object3D()
 
         this.setupResize();
         this.addObjects();
@@ -258,11 +258,11 @@ export default class Sketch {
 //                 obj.scale.multiplyScalar(0.035);
 //                 obj.position.x += 0.5;
 //                 obj.position.y -= 1.2;
-//                 this.threeD8.add(obj);
+//                 this.threeD6.add(obj);
 //             })
-//             this.threeD8.position.z = 3.5
-//             this.threeObjcts.push(this.threeD8);
-//             this.scene.add(this.threeD8);
+//             this.threeD6.position.z = 3.5
+//             this.threeObjcts.push(this.threeD6);
+//             this.scene.add(this.threeD6);
 
 //         })
         loader.load(cubes, obj => {
@@ -381,7 +381,7 @@ export default class Sketch {
         });
         window.addEventListener('mousemove', e => {
             this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	        this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+	    this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
             this.raycaster.setFromCamera(this.mouse, this.camera);
             let intersects = this.raycaster.intersectObjects([this.rayPlane]);
