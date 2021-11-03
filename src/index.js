@@ -245,26 +245,26 @@ export default class Sketch {
             this.scene.add(this.threeD4)
             
         })
-        loader.load(shark, obj => {
-            console.log(obj)
-            this.shark = [];
-            this.shark = [obj.children[0], obj.children[1], obj.children[2], obj.children[3], obj.children[4], obj.children[5], obj.children[6]];
+//         loader.load(shark, obj => {
+//             console.log(obj)
+//             this.shark = [];
+//             this.shark = [obj.children[0], obj.children[1], obj.children[2], obj.children[3], obj.children[4], obj.children[5], obj.children[6]];
 
-            this.shark.forEach((obj, i) => {
-                obj.material = this.material;
-                // obj.material = new THREE.MeshMatcapMaterial({
-                //     matcap: new THREE.TextureLoader().load(blackMat)
-                // });
-                obj.scale.multiplyScalar(0.035);
-                obj.position.x += 0.5;
-                obj.position.y -= 1.2;
-                this.threeD6.add(obj);
-            })
-            this.threeD6.position.z = 3.5
-            this.threeObjcts.push(this.threeD6);
-            this.scene.add(this.threeD6);
+//             this.shark.forEach((obj, i) => {
+//                 obj.material = this.material;
+//                 // obj.material = new THREE.MeshMatcapMaterial({
+//                 //     matcap: new THREE.TextureLoader().load(blackMat)
+//                 // });
+//                 obj.scale.multiplyScalar(0.035);
+//                 obj.position.x += 0.5;
+//                 obj.position.y -= 1.2;
+//                 this.threeD6.add(obj);
+//             })
+//             this.threeD6.position.z = 3.5
+//             this.threeObjcts.push(this.threeD6);
+//             this.scene.add(this.threeD6);
 
-        })
+//         })
         loader.load(cubes, obj => {
 
             this.cube = [obj.children[0], obj.children[1], obj.children[2], obj.children[3], obj.children[4], obj.children[5]];
@@ -380,8 +380,8 @@ export default class Sketch {
             }
         });
         window.addEventListener('mousemove', e => {
-            this.mouse.x = (e.clientX / window.innerWidth/2);
-            this.mouse.y = -(e.clientY / -window.innerHeight/2);
+            this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+	        this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
             this.raycaster.setFromCamera(this.mouse, this.camera);
             let intersects = this.raycaster.intersectObjects([this.rayPlane]);
