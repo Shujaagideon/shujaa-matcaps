@@ -107,7 +107,7 @@ export default class Sketch {
         this.threeD3 = new THREE.Object3D()
         this.threeD4 = new THREE.Object3D()
         this.threeD5 = new THREE.Object3D()
-        this.threeD6 = new THREE.Object3D()
+        this.threeD8 = new THREE.Object3D()
 
         this.setupResize();
         this.addObjects();
@@ -246,26 +246,26 @@ export default class Sketch {
             this.scene.add(this.threeD4)
             
         })
-//         loader.load(shark, obj => {
-//             console.log(obj)
-//             this.shark = [];
-//             this.shark = [obj.children[0], obj.children[1], obj.children[2], obj.children[3], obj.children[4], obj.children[5], obj.children[6]];
+        loader.load(shark, obj => {
+            console.log(obj)
+            this.shark = [];
+            this.shark = [obj.children[0], obj.children[1], obj.children[2], obj.children[3], obj.children[4], obj.children[5], obj.children[6]];
 
-//             this.shark.forEach((obj, i) => {
-//                 obj.material = this.material;
-//                 // obj.material = new THREE.MeshMatcapMaterial({
-//                 //     matcap: new THREE.TextureLoader().load(blackMat)
-//                 // });
-//                 obj.scale.multiplyScalar(0.035);
-//                 obj.position.x += 0.5;
-//                 obj.position.y -= 1.2;
-//                 this.threeD6.add(obj);
-//             })
-//             this.threeD6.position.z = 3.5
-//             this.threeObjcts.push(this.threeD6);
-//             this.scene.add(this.threeD6);
+            this.shark.forEach((obj, i) => {
+                obj.material = this.material;
+                // obj.material = new THREE.MeshMatcapMaterial({
+                //     matcap: new THREE.TextureLoader().load(blackMat)
+                // });
+                obj.scale.multiplyScalar(0.035);
+                obj.position.x += 0.5;
+                obj.position.y -= 1.2;
+                this.threeD8.add(obj);
+            })
+            this.threeD8.position.z = 3.5
+            this.threeObjcts.push(this.threeD8);
+            this.scene.add(this.threeD8);
 
-//         })
+        })
         loader.load(cubes, obj => {
 
             this.cube = [obj.children[0], obj.children[1], obj.children[2], obj.children[3], obj.children[4], obj.children[5]];
@@ -492,14 +492,14 @@ export default class Sketch {
                 this.isRunning = false;
                 nextTexture = this.threeObjcts[(this.current + 1) % len]
                 gsap.to(nextTexture.position, {
-                    z: 0,
-                    ease: Expo.easeInOut,
-                    onComplete: () => {
-                        console.log('FINISH');
-                        nextTexture.position.z = 3.5;
-                        this.current = (this.current + 1) % len;
-                        this.isRunning = false;
-                    }
+//                     z: 0,
+//                     ease: Expo.easeInOut,
+//                     onComplete: () => {
+//                         console.log('FINISH');
+//                         nextTexture.position.z = 3.5;
+//                         this.current = (this.current + 1) % len;
+//                         this.isRunning = false;
+//                     }
                 })
             }
         })
