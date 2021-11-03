@@ -487,19 +487,21 @@ export default class Sketch {
             onComplete: () => {
                 console.log('FINISH');
                 nextTexture.position.z = 3.5;
+		this.current = (this.current + 1) % len;
+                nextTexture = this.threeObjcts[(this.current + 1) % len]
                 this.isRunning = false;
                 gsap.to(nextTexture.position, {
                     z: 0,
                     ease: Expo.easeInOut,
-                    // onComplete: () => {
+                    onComplete: () => {
+			this.current = (this.current + 1) % len;
+			
                     //     console.log('FINISH');
                     //     nextTexture.position.z = 3.5;
                     //     this.current = (this.current + 1) % len;
                     //     this.isRunning = false;
-                    // }
+                    }
                 })
-		this.current = (this.current + 1) % len;
-                nextTexture = this.threeObjcts[(this.current + 1) % len]
             }
         })
     }
