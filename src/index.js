@@ -90,7 +90,7 @@ export default class Sketch {
             this.texloader.load(black2Mat),
             this.texloader.load(blackMat),
         ];
-        this.threeObjcts = [];
+        this.threeObjcts = [new THREE.Object3D()];
         // let frustumSize = 10;
         // let aspect = window.innerWidth / window.innerHeight;
         // this.camera = new THREE.OrthographicCamera(frustumSize* aspect / -2, frustumSize*aspect);
